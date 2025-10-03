@@ -11,7 +11,17 @@ import clsx from 'clsx';
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
 import { UrlObject } from 'url';
 
-// ...
+type LinkType = {
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
+const links: LinkType[] = [
+  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
+  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  { name: 'Invoices', href: '/dashboard/invoices', icon: DocumentDuplicateIcon },
+];
 
 export default function NavLinks() {
   const pathname = usePathname();
